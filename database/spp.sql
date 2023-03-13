@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Okt 2022 pada 05.41
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 7.4.28
+-- Generation Time: Mar 13, 2023 at 05:20 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `guru`
+-- Table structure for table `guru`
 --
 
 CREATE TABLE `guru` (
@@ -33,17 +33,21 @@ CREATE TABLE `guru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `guru`
+-- Dumping data for table `guru`
 --
 
 INSERT INTO `guru` (`id_guru`, `nama_guru`) VALUES
-(1, 'rousyati m.kom'),
-(2, 'husni faqih m.kom');
+(12, 'Andri Muhoir, ST'),
+(13, 'Edeh Kurniasih, S.Pd'),
+(14, 'Nuraeni, S.Pd'),
+(15, 'Didi Mei Somantri, S.Kom'),
+(16, 'Indra Priatna, S.Pd'),
+(17, 'Yani Cahyani, S.Pd');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `siswa`
+-- Table structure for table `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -53,25 +57,22 @@ CREATE TABLE `siswa` (
   `kelas` varchar(50) NOT NULL,
   `tahun_ajaran` varchar(50) NOT NULL,
   `biaya` int(11) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `username` varchar(45) NOT NULL,
   `alamat` varchar(200) NOT NULL,
   `nohp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `siswa`
+-- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nis`, `nama_siswa`, `kelas`, `tahun_ajaran`, `biaya`, `password`, `username`, `alamat`, `nohp`) VALUES
-(3, 12345664, 'aziz mario', 'XII IPA', '2020/2021', 300000, '7a24156a1971d85acf2ae64d9dbdf5322566636f', 'aziz mario', 'Desa maribaya Kec.kramat, Kab.tegal', '0897665444'),
-(10, 2147483647, 'itsna lutfia ardiansyiah', 'XII IPA', '2020/2021', 300000, '7a24156a1971d85acf2ae64d9dbdf5322566636f', 'Itsna luthfia', 'jl.semut no.12 desa mejasem Kec.kramat, Kab.Tegal', '08978907654322'),
-(11, 398371098, 'Fida meilinda effendi', 'XII IPS', '2020/2021', 300000, '7a24156a1971d85acf2ae64d9dbdf5322566636f', 'fida', 'jl.gatot sriyadi kel.panggung timur Kec.Tegal Timur, Kota Tegal', '098765443335');
+INSERT INTO `siswa` (`id_siswa`, `nis`, `nama_siswa`, `kelas`, `tahun_ajaran`, `biaya`, `alamat`, `nohp`) VALUES
+(16, 34433, 'Palah', 'XII BDP 1', '2022/2023', 300000, 'ssd', '078443'),
+(17, 576, 'Agus Setiawan', 'XII RPL 1', '2022/2023', 300000, 'cijati', '08787');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `spp`
+-- Table structure for table `spp`
 --
 
 CREATE TABLE `spp` (
@@ -87,57 +88,64 @@ CREATE TABLE `spp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `spp`
+-- Dumping data for table `spp`
 --
 
 INSERT INTO `spp` (`id_siswa`, `id_spp`, `jatuh_tempo`, `bulan`, `no_bayar`, `tgl_bayar`, `jml`, `ket`, `id_user`) VALUES
-(10, 1, '2020-07-10', 'Juli 2020', '2110030000', '2021-10-03', 300000, 'Lunas', 1),
-(10, 2, '2020-08-10', 'Agustus 2020', '', '0000-00-00', 300000, 'Belum Lunas', 1),
-(10, 3, '2020-10-29', 'September 2020', '', '0000-00-00', 300000, 'Belum Lunas', 1),
-(10, 4, '2020-10-10', 'Oktober 2020', '', '0000-00-00', 300000, 'Belum Lunas', 1),
-(10, 5, '2020-11-30', 'November 2020', '', '0000-00-00', 300000, 'belum lunas', 1),
-(10, 6, '2020-12-29', 'Desember 2017', '', '0000-00-00', 300000, 'Belum Lunas', 1),
-(10, 7, '2021-01-10', 'Januari 2021', '', '0000-00-00', 300000, 'belum_lunas', 1),
-(10, 8, '2021-02-10', 'Februari 2021', '', '0000-00-00', 300000, 'Belum Lunas', 1),
-(10, 9, '2021-03-30', 'Maret 2021', '', '0000-00-00', 300000, 'belum lunas', 1),
-(10, 10, '2021-04-10', 'April 2021', '', '0000-00-00', 300000, 'belum lunas', 1),
-(10, 11, '2021-05-10', 'Mei 2021', '', '0000-00-00', 300000, 'belum lunas', 1),
-(10, 12, '2021-06-10', 'Juni 2021', '', '0000-00-00', 300000, 'belum lunas', 1),
-(11, 13, '2020-07-10', 'Juli 2020', '', '0000-00-00', 300000, 'Belum Lunas', 1),
-(11, 14, '2020-08-10', 'Agustus 2020', '', '0000-00-00', 300000, 'Belum Lunas', 1),
-(11, 15, '2020-09-10', 'September 2020', '', '0000-00-00', 300000, 'Belum Lunas', 1),
-(11, 16, '2020-10-10', 'Oktober 2020', '', '0000-00-00', 300000, 'belum lunas', 1),
-(11, 17, '2020-11-10', 'November 2020', '', '0000-00-00', 300000, 'belum lunas', 1),
-(11, 18, '2020-12-10', 'Desember 2020', '', '0000-00-00', 300000, 'belum lunas', 1);
+(16, 73, '2022-06-01', 'Juni 2022', '2303080000', '2023-03-08', 300000, 'Lunas', 1),
+(16, 74, '2022-07-01', 'Juli 2022', '2303130000', '2023-03-13', 300000, 'Lunas', 1),
+(16, 75, '2022-08-01', 'Agustus 2022', '', '0000-00-00', 300000, '', 1),
+(16, 76, '2022-09-01', 'September 2022', '2303080000', '2023-03-08', 300000, 'Lunas', 1),
+(16, 77, '2022-10-01', 'Oktober 2022', '', '0000-00-00', 300000, '', 1),
+(16, 78, '2022-11-01', 'November 2022', '', '0000-00-00', 300000, '', 1),
+(16, 79, '2022-12-01', 'Desember 2022', '', '0000-00-00', 300000, '', 1),
+(16, 80, '2023-01-01', 'Januari 2023', '', '0000-00-00', 300000, '', 1),
+(16, 81, '2023-02-01', 'Februari 2023', '', '0000-00-00', 300000, '', 1),
+(16, 82, '2023-03-01', 'Maret 2023', '', '0000-00-00', 300000, '', 1),
+(16, 83, '2023-04-01', 'April 2023', '', '0000-00-00', 300000, '', 1),
+(16, 84, '2023-05-01', 'Mei 2023', '', '0000-00-00', 300000, '', 1),
+(17, 85, '2022-06-01', 'Juni 2022', '', '0000-00-00', 300000, '', 1),
+(17, 86, '2022-07-01', 'Juli 2022', '', '0000-00-00', 300000, '', 1),
+(17, 87, '2022-08-01', 'Agustus 2022', '', '0000-00-00', 300000, '', 1),
+(17, 88, '2022-09-01', 'September 2022', '', '0000-00-00', 300000, '', 1),
+(17, 89, '2022-10-01', 'Oktober 2022', '', '0000-00-00', 300000, '', 1),
+(17, 90, '2022-11-01', 'November 2022', '', '0000-00-00', 300000, '', 1),
+(17, 91, '2022-12-01', 'Desember 2022', '', '0000-00-00', 300000, '', 1),
+(17, 92, '2023-01-01', 'Januari 2023', '', '0000-00-00', 300000, '', 1),
+(17, 93, '2023-02-01', 'Februari 2023', '', '0000-00-00', 300000, '', 1),
+(17, 94, '2023-03-01', 'Maret 2023', '', '0000-00-00', 300000, '', 1),
+(17, 95, '2023-04-01', 'April 2023', '', '0000-00-00', 300000, '', 1),
+(17, 96, '2023-05-01', 'Mei 2023', '', '0000-00-00', 300000, '', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
+  `email` varchar(150) NOT NULL,
   `password` varchar(256) NOT NULL,
   `nama_lengkap` varchar(50) NOT NULL,
-  `level` enum('admin') NOT NULL,
+  `image` varchar(250) NOT NULL,
   `alamat` varchar(200) NOT NULL,
   `nohp` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id_user`, `username`, `password`, `nama_lengkap`, `level`, `alamat`, `nohp`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'aziz mario', 'admin', 'desa maribaya', '08976544444455'),
-(4, 'admin2', '957394825cbaf1781d6a0b0393f2595732008a3c', 'Ridamayanti', 'admin', 'Kelurahan slerok', '087654444557');
+INSERT INTO `users` (`id_user`, `email`, `password`, `nama_lengkap`, `image`, `alamat`, `nohp`) VALUES
+(1, 'admin@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'aziz mario', 'default.jpg', 'Desa maribaya', '089765444444533'),
+(8, 'user@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'naruto', 'default.jpg', 'konoha', '0897777'),
+(9, 'finanurul@gmail.com', '6a927ad1b21bca6be85fc413f7125f802ef395d4', 'fina', '', 'cijati', '547883902020');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `wali_kelas`
+-- Table structure for table `wali_kelas`
 --
 
 CREATE TABLE `wali_kelas` (
@@ -146,32 +154,38 @@ CREATE TABLE `wali_kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `wali_kelas`
+-- Dumping data for table `wali_kelas`
 --
 
 INSERT INTO `wali_kelas` (`kelas`, `id_guru`) VALUES
-('XII IPA', 1),
-('XII IPS', 2);
+('XI TKRO', 12),
+('X TKRO', 13),
+('XI APHP', 13),
+('XII BDP 1', 14),
+('XI RPL 2', 15),
+('XII RPL 2', 16),
+('X RPL 1', 17),
+('XII RPL 1', 17);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `guru`
+-- Indexes for table `guru`
 --
 ALTER TABLE `guru`
   ADD PRIMARY KEY (`id_guru`);
 
 --
--- Indeks untuk tabel `siswa`
+-- Indexes for table `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id_siswa`),
   ADD KEY `kelas` (`kelas`);
 
 --
--- Indeks untuk tabel `spp`
+-- Indexes for table `spp`
 --
 ALTER TABLE `spp`
   ADD PRIMARY KEY (`id_spp`),
@@ -179,65 +193,65 @@ ALTER TABLE `spp`
   ADD KEY `spp_ibfk_1` (`id_user`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indeks untuk tabel `wali_kelas`
+-- Indexes for table `wali_kelas`
 --
 ALTER TABLE `wali_kelas`
   ADD PRIMARY KEY (`kelas`),
   ADD KEY `id_guru` (`id_guru`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `guru`
+-- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `siswa`
+-- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `spp`
+-- AUTO_INCREMENT for table `spp`
 --
 ALTER TABLE `spp`
-  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `siswa`
+-- Constraints for table `siswa`
 --
 ALTER TABLE `siswa`
   ADD CONSTRAINT `siswa_ibfk_1` FOREIGN KEY (`kelas`) REFERENCES `wali_kelas` (`kelas`) ON DELETE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `spp`
+-- Constraints for table `spp`
 --
 ALTER TABLE `spp`
   ADD CONSTRAINT `spp_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `spp_ibfk_2` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `wali_kelas`
+-- Constraints for table `wali_kelas`
 --
 ALTER TABLE `wali_kelas`
   ADD CONSTRAINT `wali_kelas_ibfk_1` FOREIGN KEY (`id_guru`) REFERENCES `guru` (`id_guru`) ON DELETE CASCADE;
