@@ -40,7 +40,7 @@ Installation
 1. Download zip.
 2. Extract di htdocs
 3. Buka dan nyalain apache dan mysql di xampp
-4. jalanin http://loacalhost/spp
+4. jalanin http://loacalhost/pembayaran-spp
 
 *******
 License
@@ -67,5 +67,5 @@ or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
 Hak Ases
 ***************
 - email : admin@gmail.com 
-- pass  : user
+- pass  : admin
 
